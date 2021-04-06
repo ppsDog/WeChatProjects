@@ -1,0 +1,68 @@
+/**index.wxss**/
+.index_swiper{
+  
+  swiper{
+    height: 340rpx;
+    image{
+      width: 100%;
+      
+    }
+  }
+}
+
+.index_cate{
+  display: flex;
+  navigator{
+    padding: 20rpx;
+    flex: 1;
+    image{
+      width: 100%;
+    }
+  }
+}
+
+.index_floor{
+  .floor_group{
+    .floor_title{
+      image{
+        width: 100%;
+      }
+    }
+
+    
+    .floor_list{
+      padding: 10rpx 0;
+      /* 清除浮动 */
+      overflow: hidden;
+     
+      navigator{
+        
+        /* 同一行展示 */
+        float: left;
+        /* 三个部分平均分  */
+        width: 33.33%;
+
+      /* 后四个超链接,后几个就是-n+几 */
+      &:nth-last-child(-n+4){
+        /* 第一张原图 232 * 386 ,后四张的高度是第一张的1/2 */
+        height:33.33vw * 386 /  232 /2 ;
+
+        /* 后四张左边框 */
+        border-left: 10rpx solid #fff;
+      }
+
+      /* 2 3 两个超链接 */
+      &:nth-child(2),
+      &:nth-child(3){
+        border-bottom: 10rpx solid #fff;
+      }
+        image{
+          width: 100%;
+          /* 为了让后四张继承高度 */
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+

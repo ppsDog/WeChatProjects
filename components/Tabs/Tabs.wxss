@@ -1,0 +1,16 @@
+.tabs .tabs_title {
+  display: flex;
+}
+.tabs .tabs_title .title_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 15rpx 0;
+  /* 透明边框,防止active添加边框出现文字跳动现象 */
+  border-bottom: 5rpx solid transparent;
+}
+.tabs .tabs_title .active {
+  color: var(--themeColor);
+  border-bottom: 5rpx solid currentColor;
+}

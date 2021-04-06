@@ -1,0 +1,55 @@
+<!--pages/user_info/index.wxml-->
+<form bindsubmit="updataUserInfo">
+	<view class="section">
+		<view class="section-title">微信名:</view>
+		<view class="section-value">
+			<input
+			 type="text"
+			 name="nickName"
+			 value="{{userInfo.nickName}}"
+			 placeholder="微信名"
+			 disabled
+			/>
+		</view>
+	</view>
+
+	<view class="section">
+		<view class="section-title">用户名:</view>
+		<view class="section-value">
+			<input
+			 type="text"
+			 name="userName"
+			 value="{{userInfo.userName}}"
+			/>
+		</view>
+	</view>
+
+	<view class="section">
+		<view class="section-title">性别:</view>
+		<view class="section-value">
+			<input
+			 hidden="true"
+			 name="sex"
+			 value="{{array[index]}}"
+			/>
+			<picker
+			 bindchange="bindPickerChange"
+			 value="{{index}}"
+			 range="{{array}}"
+			>
+				<view class="picker">{{array[index]}}</view>
+			</picker>
+		</view>
+	</view>
+	<input
+	 hidden="true"
+	 name="user_id"
+	 value="{{userInfo.user_id}}"
+	/>
+	<view class="section">
+		<button formType="submit" type="warn">
+			<text class="iconfont icon-true">提交</text>
+		</button>
+	</view>
+</form>
+

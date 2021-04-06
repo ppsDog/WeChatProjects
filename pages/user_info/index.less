@@ -1,0 +1,72 @@
+/* pages/user_info/index.wxss */
+page {
+  background-color: #eeeeee;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  padding: 40rpx;
+
+  .section-title {
+    flex: 1;
+    font-size: 30rpx;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40rpx;
+  }
+
+  &:nth-of-type(1) {
+    .section-value {
+      flex: 4;
+
+      input {
+        padding-left: 30rpx;
+        font-size: 30rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30rpx;
+        border-bottom: 1px solid #a4a4a4;
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    .section-value {
+      flex: 4;
+
+      input {
+        padding-left: 30rpx;
+        font-size: 30rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30rpx;
+        border-bottom: 1px solid #a4a4a4;
+      }
+    }
+
+  }
+
+  &:nth-of-type(3) {
+    .section-value {
+      flex: 4;
+
+      picker {
+        .picker {
+
+          padding-left: 30rpx;
+          font-size: 30rpx;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 30rpx;
+          border-bottom: 1px solid #a4a4a4;
+
+        }
+      }
+    }
+
+  }
+}

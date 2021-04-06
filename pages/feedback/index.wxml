@@ -1,0 +1,90 @@
+<!--pages/feedback/index.wxml-->
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+	<view wx:if="{{tabsId == 0}}" class="order_main">
+		<view
+		 wx:for="{{feedback}}"
+		 wx:key="order_id"
+		 class="order_item"
+		 wx:if="{{feedback.length>0}}"
+		>
+			<view class="order_no_row">
+				<view class="order_no_text">留言内容</view>
+				<view class="order_no_value">{{item.feedback_text}}</view>
+			</view>
+			<view class="order_price_row">
+				<view class="order_price_text">留言人</view>
+				<view class="order_price_value">{{item.user_name}}</view>
+			</view>
+			<view class="order_time_row">
+				<view class="order_time_text">留言日期</view>
+				<view class="order_time_value">{{item.feedback_time}}</view>
+			</view>
+		</view>
+
+		<view wx:if="{{feedback.length==0}}" class="order_main">
+			<image src="http://127.0.0.1:3000/null.jpg" mode="widthFix" />
+		</view>
+
+	</view>
+
+	<view wx:if="{{tabsId == 1}}" class="order_main">
+		<view
+		 wx:for="{{tomeFeedback}}"
+		 wx:key="order_id"
+		 class="order_item"
+		 wx:if="{{tomeFeedback.length>0}}"
+		>
+			<view class="order_no_row">
+				<view class="order_no_text">留言内容</view>
+				<view class="order_no_value">{{item.feedback_text}}</view>
+			</view>
+			<view class="order_price_row">
+				<view class="order_price_text">留言人</view>
+				<view class="order_price_value">{{item.user_name}}</view>
+			</view>
+			<view class="order_time_row">
+				<view class="order_time_text">留言日期</view>
+				<view class="order_time_value">{{item.feedback_time}}</view>
+			</view>
+			<view class="order_status_row">
+				<view class="order_pay_status">
+					<button
+					 bindtap="handleDelect"
+					 data-feedback_id="{{item.feedback_id}}"
+					 type="warn"
+					>已阅并删除
+					</button>
+
+				</view>
+			</view>
+		</view>
+
+		<view wx:if="{{tomeFeedback.length==0}}" class="order_main">
+			<image src="http://127.0.0.1:3000/null.jpg" mode="widthFix" />
+		</view>
+
+	</view>
+
+	<view wx:if="{{tabsId == 2}}" class="fb_main">
+		<view class="fb_title">问题的种类</view>
+		<view class="fb_tips">
+			<text>功能建议</text>
+			<text>购买遇到问题</text>
+			<text>性能问题</text>
+			<text>其他</text>
+		</view>
+		<view class="fb_content">
+			<textarea
+			 value="{{feedback_text}}"
+			 bindinput="handleTextInput"
+			 placeholder="请描述一下您的问题"
+			></textarea>
+		</view>
+		<view class="form_btn_wrap">
+			<button bindtap="handleFormSubmit" type="warn">
+				<text  class="iconfont icon-true">提交</text>
+			</button>
+		</view>
+	</view>
+</Tabs>
+

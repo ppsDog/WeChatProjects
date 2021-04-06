@@ -1,0 +1,36 @@
+<!--评论pages/comment/index.wxml-->
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+	<view class="fb_main">
+		<view class="fb_title">合理对这次购买进行评论</view>
+		<view class="fb_content">
+			<textarea
+			 value="{{comment_text}}"
+			 bindinput="handleTextInput"
+			 placeholder="请写下你的评论"
+			></textarea>
+			<view class="fb_tool">
+
+				<view
+				 class="up_img_item"
+				 wx:for="{{chooseImgs}}"
+				 wx:key="*this"
+				 bindtap="handleRemoveImg"
+				 data-index="{{index}}"
+				>
+					<UpImg src="{{item}}"></UpImg>
+				</view>
+			</view>
+		</view>
+		<view class="form_btn_wrap">
+			<button
+			 data-order_id="{{order_id}}"
+			 bindtap="handleFormSubmit"
+			 type="warn"
+			>
+				<text  class="iconfont icon-true">提交</text>
+			</button>
+		</view>
+	</view>
+
+</Tabs>
+

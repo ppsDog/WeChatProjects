@@ -1,0 +1,67 @@
+/*  1.https://www.iconfont.cn/阿里巴巴矢量图标库
+    2.添加入库
+    3.添加至项目
+    4.查看在线链接  
+*/
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1610276858502'); /* IE9 */
+  src: url('iconfont.eot?t=1610276858502#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),
+  url('iconfont.woff?t=1610276858502') format('woff'),
+  url('iconfont.ttf?t=1610276858502') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1610276858502#iconfont') format('svg'); /* iOS 4.1- */
+
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 对勾 */
+.icon-true:before {
+  content: "\e62f";
+}
+
+/* 购物车 */
+.icon-gouwuche:before {
+  content: "\e600";
+}
+
+/* 收藏后 */
+.icon-shoucang1:before {
+  content: "\e7b0";
+}
+/* 评论 */
+.icon-pinglun:before {
+  content: "\e649";
+}
+/* 收藏 */
+.icon-shoucang:before {
+  content: "\e63d";
+}
+/* 分享 */
+.icon-fenxiang:before {
+  content: "\e620";
+}
+/* 付款通知 */
+.icon-fukuantongzhi:before {
+  content: "\e60c";
+}
+/* 客服 */
+.icon-kefu:before {
+  content: "\e614";
+}
+/* 待收货 */
+.icon-daishouhuo:before {
+  content: "\e7a2";
+}
+/* 退货退款 */
+.icon-tuihuotuikuan:before {
+  content: "\e7af";
+}
+
+

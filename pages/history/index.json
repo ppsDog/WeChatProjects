@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "SearchInput": "../../components/SearchInput/SearchInput",
+    "Tabs": "../../components/Tabs/Tabs"
+  },
+  "navigationBarBackgroundColor": "#eb4450",
+  "navigationBarTitleText": "我的足迹",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,42 @@
+<!--pages/history/index.wxml-->
+<!--商品列表pages/goods_list/index.wxml-->
+<!-- <SearchInput></SearchInput> -->
+<!-- 监听自定义事件 -->
+<!-- <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange"> -->
+<view class="first_tab">
+	<view
+	 class="goods_item"
+	 wx:for="{{historyList}}"
+	 wx:key="goods_id"
+	>
+		<view
+		 class="goods_list"
+		 bindtap="handleGoodsDetail"
+		 data-goodsid="{{item.goods_id}}"
+		>
+			<!-- 左侧图片容器 -->
+			<view class="goods_img_wrap">
+				<image class src="{{item.pics}}" />
+			</view>
+			<!--<view class="goods_img_wrap">
+					<image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+        </view>-->
+			<!-- 右侧商品容器 -->
+			<view class="goods_info_wrap">
+				<view class="goods_name">{{item.goods_name}}</view>
+				<view class="goods_price">￥{{item.goods_price}}</view>
+			</view>
+
+		</view>
+	</view>
+</view>
+<view wx:if="{{historyList.length > 0}}" class="btn">
+	<button bindtap="clearHis" type="warn">
+		<text class="iconfont icon-true">清空足迹</text>
+	</button>
+</view>
+<view wx:else class="null">
+	<image src="http://127.0.0.1:3000/null.jpg" mode="widthFix" />
+</view>
+<!-- </Tabs> -->
+

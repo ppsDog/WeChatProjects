@@ -1,0 +1,101 @@
+/* pages/address/index.wxss */
+page {
+  background-color: #eeeeee;
+}
+.address_main {
+  padding: 20rpx;
+  color: #666;
+}
+.address_main .address_item {
+  display: flex;
+  padding: 20rpx;
+  margin-bottom: 10rpx;
+  background-color: #fff;
+}
+.address_main .address_item .address_info {
+  flex: 3;
+  padding-bottom: 20rpx;
+}
+.address_main .address_item .address_info .address_ut_row {
+  display: flex;
+  padding-right: 30rpx;
+}
+.address_main .address_item .address_info .address_ut_row .address_un_value {
+  flex: 1;
+  font-size: 35rpx;
+}
+.address_main .address_item .address_info .address_ut_row .address_tel_value {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  color: #a4a4a4;
+}
+.address_main .address_item .address_info .address_address_row .address_address_value {
+  letter-spacing: 4rpx;
+}
+.address_main .address_item .address_edit {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid #a4a4a4;
+  color: #a4a4a4;
+}
+.address {
+  background-color: #fff;
+  margin: 0 20rpx;
+}
+.address .section {
+  display: flex;
+  flex-direction: row;
+  padding: 40rpx;
+}
+.address .section .section-title {
+  font-size: 30rpx;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40rpx;
+}
+.address .section:first-child .section-value {
+  flex: 2;
+}
+.address .section:first-child .section-value input {
+  width: 1rpx;
+}
+.address .section:first-child .section-value picker .picker {
+  letter-spacing: 4rpx;
+  font-size: 35rpx;
+  border-bottom: 1px solid #a4a4a4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30rpx;
+}
+.address .section .section-title {
+  width: 20%;
+  flex: 1;
+}
+.address .section:nth-last-child(-n+4) .section-value {
+  flex: 2;
+}
+.address .section:nth-last-child(-n+4) .section-value input {
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #a4a4a4;
+}
+.address .section:last-child {
+  border-bottom: 0px;
+}
+.address .section:last-child input {
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #a4a4a4;
+}

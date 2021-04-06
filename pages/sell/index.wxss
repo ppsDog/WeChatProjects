@@ -1,0 +1,151 @@
+/* pages/sell/index.wxss */
+page {
+  background-color: #eeeeee;
+}
+/* pages/goods_list/index.wxss */
+.first_tab .goods_item {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 20rpx 0;
+}
+.first_tab .goods_item .goods_img_wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first_tab .goods_item .goods_img_wrap image {
+  width: 89.6px;
+  height: 90px;
+}
+.first_tab .goods_item .goods_info_wrap {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  /* 空白环绕 */
+  justify-content: space-around;
+}
+.first_tab .goods_item .goods_info_wrap .goods_name {
+  /* 文字超出范围,用...代替 */
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  /* 第几行显示..., 就写几 */
+  -webkit-line-clamp: 2;
+}
+.first_tab .goods_item .goods_info_wrap .goods_price {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}
+.sell {
+  background-color: #fff;
+  /*   margin: 0 20rpx; */
+  width: 100%;
+}
+.sell .section {
+  display: flex;
+  flex-direction: row;
+  padding: 40rpx;
+}
+.sell .section:nth-child(2) {
+  display: flex;
+}
+.sell .section:nth-child(2) .section-title {
+  flex: 1;
+}
+.sell .section:nth-child(2) .section-value {
+  flex: 3;
+}
+.sell .section:nth-child(2) .section-value input {
+  width: 0rpx;
+  height: 0rpx;
+  border: 0;
+  float: left;
+  padding: 0;
+}
+.sell .section:nth-child(2) .section-value picker .picker {
+  letter-spacing: 4rpx;
+  font-size: 35rpx;
+  width: 100%;
+  border-bottom: 1px solid #a4a4a4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30rpx;
+}
+.sell .section:nth-last-child(2) .section-value {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30rpx;
+}
+.sell .section:nth-last-child(2) button {
+  margin: 0;
+  width: 90rpx;
+  height: 90rpx;
+  font-size: 60rpx;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  color: #ccc;
+}
+.sell .section:nth-last-child(2) .up_img_item {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.sell .section .section-title {
+  width: 20%;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 40rpx;
+}
+.sell .section .section-value {
+  flex: 3;
+}
+.sell .section .section-value input {
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #a4a4a4;
+}
+.sell .section .section-value textarea {
+  font-size: 30rpx;
+  display: flex;
+  padding-bottom: 30rpx;
+  width: 100%;
+  border: 1px solid #a4a4a4;
+}
+.sell .section .section-value button {
+  margin: 0;
+  width: 90rpx;
+  height: 90rpx;
+  font-size: 60rpx;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  color: #ccc;
+}
+.sell .section .section-value .up_img_wrap {
+  width: 150rpx;
+  height: 150rpx;
+  position: relative;
+}
+.sell .section .section-value .up_img_wrap image {
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+.sell .section .section-value .up_img_item {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}

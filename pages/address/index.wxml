@@ -1,0 +1,118 @@
+<!--添加收货地址pages/address/index.wxml-->
+<!--
+        bindchange  value改变时触发 change 事件，event.detail = {value} 
+        bindcolumnchange    列改变时触发	
+        value           表示选择了 range 中的第几个（下标从 0 开始)
+        range           mode 为 selector 或 multiSelector 时，range 有效
+
+-->
+
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+
+	<view wx:if="{{tabsId==0}}" class="address_main">
+		<view
+		 wx:for="{{address}}"
+		 wx:key="address_id"
+		 class="address_item"
+		>
+			<view class="address_info">
+				<view class="address_ut_row">
+					<view class="address_un_value">{{item.consignee}}</view>
+					<view class="address_tel_value">{{item.tel}}</view>
+				</view>
+				<view class="address_address_row">
+					<view class="address_address_value">{{item.floor}}宿舍楼:{{item.floor}}{{item.floornum}}楼-{{item.dormnum}}</view>
+				</view>
+			</view>
+			<view
+			 class="address_edit"
+			 data-addid="{{item.add_id}}"
+			 bindtap="handleEdit"
+			>编辑
+			</view>
+		</view>
+	</view>
+
+	<!-- 添加地址 -->
+	<view wx:else class="address">
+		<form bindsubmit="formSubmit">
+			<view class="section">
+				<view class="section-title">所在区/楼号:</view>
+				<view class="section-value">
+					<input
+					 hidden="true"
+					 name="floor"
+					 value="{{multiArray[0][multiIndex[0]]}}"
+					/>
+					<input
+					 hidden="true"
+					 name="floornum"
+					 value="{{multiArray[1][multiIndex[1]]}}"
+					/>
+
+					<picker
+					 mode="multiSelector"
+					 bindchange="bindMultiPickerChange"
+					 bindcolumnchange="bindMultiPickerColumnChange"
+					 value="{{multiIndex}}"
+					 range="{{multiArray}}"
+					>
+						<view class="picker">{{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}</view>
+					</picker>
+				</view>
+			</view>
+
+			<view class="section">
+				<view class="section-title">手机号:</view>
+				<view class="section-value">
+					<input
+					 type="number"
+					 name="tel"
+					 value="{{address.tel}}"
+					 placeholder="请输入手机号"
+					/>
+				</view>
+			</view>
+
+			<view class="section">
+				<view class="section-title">宿舍号:</view>
+				<view class="section-value">
+					<input
+					 type="number"
+					 name="dormnum"
+					 value="{{address.dormnum}}"
+					 placeholder="请输入宿舍号"
+					/>
+				</view>
+			</view>
+
+			<view class="section">
+				<view class="section-title">姓名：</view>
+				<view class="section-value">
+					<input
+					 type="text"
+					 name="consignee"
+					 value="{{address.consignee}}"
+					 placeholder="请输入姓名"
+					/>
+				</view>
+			</view>
+			<view class="section">
+				<button formType="submit" type="warn">
+					<text class="iconfont icon-true">提交</text>
+				</button>
+
+				<button
+				 wx:if="{{edit}}"
+				 bindtap="delAdd"
+				 data-addId="{{address.add_id}}"
+				 type="warn"
+				>
+					<text class="iconfont icon-true">删除</text>
+				</button>
+
+			</view>
+		</form>
+	</view>
+</Tabs>
+

@@ -1,0 +1,72 @@
+<!--订单页面pages/order/index.wxml-->
+<!-- 收货地址 -->
+<view class="revice_address_row">
+	<view class="user_info_row">
+		<view class="user_info">
+			<view>{{order.order_consignee}}</view>
+
+			<view>{{order.order_address}}</view>
+		</view>
+		<view class="user_phone">{{order.order_tel}}</view>
+	</view>
+</view>
+<!-- 购物车内容 -->
+<view class="cart_content">
+	<view class="cart_title">购买的商品</view>
+	<view class="cart_main">
+		<view
+		 class="cart_item"
+		 wx:for="{{order.goods}}"
+		 wx:key="goods_id"
+		 for-index="index"
+		>
+			<!-- 商品图片 -->
+			<navigator class="cart_img_wrap">
+				<image mode="widthFix" src="{{item.pics}}"></image>
+			</navigator>
+			<!-- 商品信息 -->
+			<view class="cart_info_wrap">
+				<view class="goods_name">{{item.goods_name}}</view>
+				<view class="goods_price_wrap">
+					<view class="goods_price">￥{{item.goods_price}}</view>
+					<view class="cart_num_tool">
+						<view class="goods_number">X 1</view>
+					</view>
+				</view>
+			</view>
+
+		</view>
+
+	</view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="footer_tool">
+
+	<!-- 订单状态 -->
+	<view class="order-status">
+
+		<text  wx:if="{{order.pay_status == 1}}" class="order-status-info">待收货</text>
+		<text  wx:elif="{{order.pay_status == 2 && order.com_status == 2}}" class="order-status-info">待评论</text>
+		<text  wx:elif="{{order.pay_status == 2 && order.com_status == 1}}" class="order-status-info">订单已完成</text>
+
+	</view>
+
+	<!-- 总价格 -->
+	<view class="total_price_wrap">
+
+		<view class="total_price">
+			合计:
+			<text class="total_price_text">￥{{order.order_price}}</text>
+		</view>
+	</view>
+	<button
+	 wx:if="{{order.pay_status == 1}}"
+	 bindtap="delOrder"
+	 data-order_id="{{order.order_id}}"
+	 class="order_pay_wrap"
+	>
+		取消订单
+	</button>
+</view>
+

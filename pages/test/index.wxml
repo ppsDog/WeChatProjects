@@ -1,0 +1,41 @@
+<!-- <view class="section">
+	<view class="section__title">多列选择器</view>
+	<picker
+	 mode="multiSelector"
+	 bindchange="bindMultiPickerChange"
+	 bindcolumnchange="bindMultiPickerColumnChange"
+	 value="{{multiIndex}}"
+	 range="{{multiArray}}"
+	>
+		<view class="picker">
+			当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+		</view>
+	</picker>
+</view> -->
+
+<!--<view class="section">
+	<view class="section-title">图片：</view>
+	<view class="section-value">
+		<button wx:if="{{chooseImgs.length==0}}" bindtap="handleChooseImg">+</button>
+		<view
+		 class="up_img_item"
+		 wx:for="{{chooseImgs}}"
+		 wx:key="*this"
+		 data-index="{{index}}"
+		>
+
+		</view>
+	</view>
+</view>
+<view class="container">
+	<view class="userinfo">
+		<button bindtap="imgUpload"> 上传图片 </button>
+		<button bindtap="uploadVideo"> 上传视频 </button>
+
+	</view>
+</view>
+
+-->
+
+<image src="http://127.0.0.1:3000/null.jpg" mode="widthFix" />
+

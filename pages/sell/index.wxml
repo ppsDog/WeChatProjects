@@ -1,0 +1,196 @@
+<!--添加收货地址pages/sell/index.wxml-->
+<!--
+        bindchange  value改变时触发 change 事件，event.detail = {value} 
+        bindcolumnchange    列改变时触发	
+        value           表示选择了 range 中的第几个（下标从 0 开始)
+        range           mode 为 selector 或 multiSelector 时，range 有效
+
+-->
+
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+	<view wx:if="{{tabsId==0}}" class="sell_main">
+		<view class="first_tab">
+			<navigator
+			 class="goods_item"
+			 wx:for="{{sellList}}"
+			 wx:key="goods_id"
+			>
+				<!-- 左侧图片容器 -->
+				<view class="goods_img_wrap">
+					<image class src="{{item.pics}}" />
+				</view>
+				<!-- 右侧商品容器 -->
+				<view class="goods_info_wrap">
+					<view class="goods_name">{{item.goods_name}}</view>
+					<view class="goods_price">￥{{item.goods_price}}</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
+
+	<!-- 待上架 -->
+	<view wx:elif="{{tabsId==1}}" class="sell_main">
+		<view class="first_tab">
+			<navigator
+			 class="goods_item"
+			 wx:for="{{sellList}}"
+			 wx:key="goods_id"
+			 wx:if="{{item.goods_status==0}}"
+			>
+				<!-- url="/pages/goods_detail/index?goods_id={{item.goods_id}}" -->
+				<!-- 左侧图片容器 -->
+				<view class="goods_img_wrap">
+					<image class src="{{item.pics}}" />
+				</view>
+				<!-- 右侧商品容器 -->
+				<view class="goods_info_wrap">
+					<view class="goods_name">{{item.goods_name}}</view>
+					<view class="goods_price">￥{{item.goods_price}}</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
+
+	<!-- 未出售 -->
+	<view wx:elif="{{tabsId==2}}" class="sell_main">
+		<view class="first_tab">
+			<navigator
+			 class="goods_item"
+			 wx:for="{{sellList}}"
+			 wx:key="goods_id"
+			 wx:if="{{item.goods_status==1}}"
+			 url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+			>
+				<!-- 左侧图片容器 -->
+				<view class="goods_img_wrap">
+					<image class src="{{item.pics}}" />
+				</view>
+				<!-- 右侧商品容器 -->
+				<view class="goods_info_wrap">
+					<view class="goods_name">{{item.goods_name}}</view>
+					<view class="goods_price">￥{{item.goods_price}}</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
+
+	<!-- 已出售 -->
+	<view wx:elif="{{tabsId==3}}" class="sell_main">
+		<view class="first_tab">
+			<navigator
+			 class="goods_item"
+			 wx:for="{{sellList}}"
+			 wx:key="goods_id"
+			 wx:if="{{item.goods_status==2}}"
+			>
+				<!-- 左侧图片容器 -->
+				<view class="goods_img_wrap">
+					<image class src="{{item.pics}}" />
+				</view>
+				<!-- 右侧商品容器 -->
+				<view class="goods_info_wrap">
+					<view class="goods_name">{{item.goods_name}}</view>
+					<view class="goods_price">￥{{item.goods_price}}</view>
+				</view>
+				<view wx:if="{{item==null}}" class="order_main">
+					<image src="http://127.0.0.1:3000/null.jpg" mode="widthFix" />
+				</view>
+			</navigator>
+		</view>
+	</view>
+
+	<!-- 上架商品 -->
+	<view wx:else class="sell">
+		<form bindsubmit="formSubmit">
+			<view class="section">
+				<view class="section-title">商品名称:</view>
+				<view class="section-value">
+					<input
+					 type="text"
+					 name="goods_name"
+					 value="{{address.tel}}"
+					 placeholder="请添加商品名称"
+					/>
+				</view>
+			</view>
+
+			<view class="section">
+				<view class="section-title">商品种类:</view>
+				<view class="section-value">
+					<input
+					 hidden="true"
+					 name="cat_id"
+					 value="{{cat_id}}"
+					/>
+
+					<picker
+					 mode="multiSelector"
+					 bindchange="bindMultiPickerChange"
+					 bindcolumnchange="bindMultiPickerColumnChange"
+					 value="{{multiIndex}}"
+					 range="{{multiArray}}"
+					>
+						<view class="picker">{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}</view>
+					</picker>
+				</view>
+			</view>
+
+			<view class="section">
+				<view class="section-title">商品价格:</view>
+				<view class="section-value">
+					<input
+					 type="number"
+					 name="goods_price"
+					 value="{{address.dormnum}}"
+					 placeholder="请输入商品价格"
+					/>
+				</view>
+			</view>
+
+			<view class="section">
+				<view class="section-title">商品介绍:</view>
+				<view class="section-value">
+					<textarea
+					 value="{{comment_text}}"
+					 name="goods_introduce"
+					 placeholder="请对你的商品简单介绍"
+					></textarea>
+				</view>
+			</view>
+
+			<view class="section">
+				<view class="section-title">图片：</view>
+				<view class="section-value">
+					<button wx:if="{{chooseImgs.length==0}}" bindtap="handleChooseImg">+</button>
+					<view
+					 class="up_img_item"
+					 wx:for="{{chooseImgs}}"
+					 wx:key="*this"
+					 data-index="{{index}}"
+					>
+						<view class="up_img_wrap">
+							<image src="{{item}}"></image>
+
+						</view>
+					</view>
+				</view>
+			</view>
+
+			<view class="section">
+				<button formType="submit" type="warn">
+					<text class="iconfont icon-true">提交</text>
+				</button>
+
+				<button
+				 wx:if="{{edit}}"
+				 bindtap="delAdd"
+				 data-add-id="{{address.add_id}}"
+				 type="warn"
+				>
+					<text class="iconfont icon-true">删除</text>
+				</button>
+			</view>
+		</form>
+	</view>
+</Tabs>
+

@@ -1,0 +1,136 @@
+/* pages/address/index.wxss */
+page {
+  background-color: #eeeeee;
+}
+
+
+.address_main {
+  padding: 20rpx;
+  color: #666;
+
+
+  .address_item {
+    display: flex;
+    padding: 20rpx;
+    margin-bottom: 10rpx;
+    background-color: #fff;
+
+    .address_info {
+      flex: 3;
+      padding-bottom: 20rpx;
+
+      .address_ut_row {
+        display: flex;
+        padding-right: 30rpx;
+
+        .address_un_value {
+          flex: 1;
+          font-size: 35rpx;
+        }
+
+        .address_tel_value {
+          flex: 3;
+          display: flex;
+          align-items: center;
+          color: #a4a4a4;
+
+        }
+      }
+
+      .address_address_row {
+        .address_address_value {
+          letter-spacing: 4rpx;
+        }
+      }
+    }
+
+
+    .address_edit {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: 2px solid #a4a4a4;
+      color: #a4a4a4;
+    }
+  }
+
+
+
+}
+
+.address {
+  background-color: #fff;
+  margin: 0 20rpx;
+
+  .section {
+    display: flex;
+    flex-direction: row;
+    padding: 40rpx;
+
+    .section-title {
+      font-size: 30rpx;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 40rpx;
+    }
+
+    &:first-child {
+      .section-value {
+        flex: 2;
+
+        input {
+          width: 1rpx;
+        }
+
+        picker {
+          .picker {
+            letter-spacing: 4rpx;
+            font-size: 35rpx;
+            border-bottom: 1px solid #a4a4a4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 30rpx;
+          }
+        }
+      }
+    }
+
+    .section-title {
+      width: 20%;
+      flex: 1;
+    }
+
+    &:nth-last-child(-n+4) {
+      .section-value {
+        flex: 2;
+
+        input {
+          padding-left: 30rpx;
+          font-size: 30rpx;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 30rpx;
+          border-bottom: 1px solid #a4a4a4;
+        }
+      }
+    }
+
+    &:last-child {
+      border-bottom: 0px;
+
+      input {
+        padding-left: 30rpx;
+        font-size: 30rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30rpx;
+        border-bottom: 1px solid #a4a4a4;
+      }
+    }
+
+  }
+}

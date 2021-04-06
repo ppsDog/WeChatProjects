@@ -1,0 +1,21 @@
+<!--pages/cart_address/index.wxml-->
+<view class="address_main">
+	<view
+	 wx:for="{{address}}"
+	 wx:key="address_id"
+	 class="address_item"
+	 data-address_id="{{item.consignee}}"
+	 bindtap="handleCart"
+	>
+		<view class="address_info">
+			<view class="address_ut_row">
+				<view class="address_un_value">{{item.consignee}}</view>
+				<view class="address_tel_value">{{item.tel}}</view>
+			</view>
+			<view class="address_address_row">
+				<view class="address_address_value">{{item.floor}}宿舍楼:{{item.floor}}{{item.floornum}}-{{item.dormnum}}</view>
+			</view>
+		</view>
+	</view>
+</view>
+

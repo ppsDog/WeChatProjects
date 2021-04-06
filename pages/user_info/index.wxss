@@ -1,0 +1,52 @@
+/* pages/user_info/index.wxss */
+page {
+  background-color: #eeeeee;
+}
+.section {
+  display: flex;
+  flex-direction: row;
+  padding: 40rpx;
+}
+.section .section-title {
+  flex: 1;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40rpx;
+}
+.section:nth-of-type(1) .section-value {
+  flex: 4;
+}
+.section:nth-of-type(1) .section-value input {
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #a4a4a4;
+}
+.section:nth-of-type(2) .section-value {
+  flex: 4;
+}
+.section:nth-of-type(2) .section-value input {
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #a4a4a4;
+}
+.section:nth-of-type(3) .section-value {
+  flex: 4;
+}
+.section:nth-of-type(3) .section-value picker .picker {
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #a4a4a4;
+}
